@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">csc498G-Geek\'s-love-app-calculator</string>
+    
+    <string-array name="languages">
+        <item>Java</item>
+        <item>HTML</item>
+        <item>CSS</item>
+        <item>JavaScript</item>
+        <item>SQL</item>
+        <item>react.Js</item>
+    </string-array>
+
+</resources>
