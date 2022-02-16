@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                    }
                    react.animate().alpha(1).setDuration(2000);
                     rnd = random.nextInt(101);//0 too 100
-                   TextView react2=(TextView)findViewById(R.id.react2);
+                   TextView react2=(TextView)findViewById(R.id.react2);// i will add this rnd number in the table where the id is react2
                    String rndm=Integer.toString(rnd);
                    react2.setText(rndm+"%");
                    Toast.makeText(this, "your love to react is: " + rnd + "%", Toast.LENGTH_SHORT).show();
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
-    public void table(View v){
+    public void table(View v){//this table button only showcase the table with the reset button next to it
         Button reset=(Button)findViewById(R.id.reset);
         reset.animate().alpha(1).setDuration(2000);
         TableLayout tb=(TableLayout)findViewById(R.id.table_layout);
@@ -145,7 +145,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
-    public void reset(View v){
+    public void reset(View v){//this button will reset the table all of it with every % written in it
+        // also the reset button only appears when we click the table button since we are resetting the table
         Button reset=(Button)findViewById(R.id.reset);
         reset.animate().alpha(0).setDuration(1000);
         TableLayout tb=(TableLayout)findViewById(R.id.table_layout);
