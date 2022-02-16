@@ -2,6 +2,7 @@ package com.charbelhayek.csc498g_geeks_love_app_calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String n;
     String language;
     Random random=new Random();
+
 
 
 
@@ -125,5 +127,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
 
+    }
+    public void table(View v){
+        openActivity2();
+    }
+    public void openActivity2(){
+        Intent intent = new Intent(this,MainActivity2.class);
+        startActivity(intent);
     }
 }
