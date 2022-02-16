@@ -4,13 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    String n;
+    String language;
+    Random random=new Random();
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Spinner mySpinner=(Spinner) findViewById(R.id.spinner);//this is to find what we pick from the dropdown menu with the id spinner and save it to this variable
@@ -19,9 +30,100 @@ public class MainActivity extends AppCompatActivity {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);//this is to make it a dropdown
         mySpinner.setAdapter(myAdapter);//if we don't write this then all the data retreived and put in the adapter will not be shown in the spinner which is the main layout
         //this wil allow the adapter to show the dropdown
+        mySpinner.setOnItemSelectedListener(this);
     }
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        language=adapterView.getItemAtPosition(i).toString();// the adapterView is the parent and i is the position
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
     public void generate(View view)
     {
+        TextView name=(TextView) findViewById(R.id.name);
+        n=name.toString();// where i will store the name as a String
+        ImageView html=(ImageView)findViewById(R.id.html);
+        ImageView css=(ImageView)findViewById(R.id.css);
+        ImageView js=(ImageView)findViewById(R.id.js);
+        ImageView java=(ImageView)findViewById(R.id.java);
+        ImageView sql=(ImageView)findViewById(R.id.sql);
+        ImageView react=(ImageView)findViewById(R.id.react);
+        ImageView[] languages= {html,css,java,js,sql,react};//array of imageViews languages
+
+
+        if(language.equalsIgnoreCase("html"))
+        {
+           for(int i=0;i<languages.length;i++)//this for loop is to make the opacity of any existing image to 0 before making a new one 1
+           {
+               ImageView lan=languages[i];
+                lan.animate().alpha(0).setDuration(2000);
+           }
+            html.animate().alpha(1).setDuration(2000);
+            int rndm=random.nextInt(101);//0 too 100
+            Toast.makeText(this, "your love to html is: "+rndm+"%", Toast.LENGTH_SHORT).show();
+        }
+        else if(language.equalsIgnoreCase("css"))
+        {
+            for(int i=0;i<languages.length;i++)
+            {
+                ImageView lan=languages[i];
+                lan.animate().alpha(0).setDuration(2000);
+            }
+            css.animate().alpha(1).setDuration(2000);
+            int rndm=random.nextInt(101);//0 too 100
+            Toast.makeText(this, "your love to css is: "+rndm+"%", Toast.LENGTH_SHORT).show();
+        }
+        else if(language.equalsIgnoreCase("javascript"))
+        {
+            for(int i=0;i<languages.length;i++)
+            {
+                ImageView lan=languages[i];
+                lan.animate().alpha(0).setDuration(2000);
+            }
+            js.animate().alpha(1).setDuration(2000);
+            int rndm=random.nextInt(101);//0 too 100
+            Toast.makeText(this, "your love to js is: "+rndm+"%", Toast.LENGTH_SHORT).show();
+       }
+        else if(language.equalsIgnoreCase("java"))
+        {
+            for(int i=0;i<languages.length;i++)
+           {
+               ImageView lan=languages[i];
+               lan.animate().alpha(0).setDuration(2000);
+           }
+            java.animate().alpha(1).setDuration(2000);
+            int rndm=random.nextInt(101);//0 too 100
+            Toast.makeText(this, "your love to java is: "+rndm+"%", Toast.LENGTH_SHORT).show();
+        }
+        else if(language.equalsIgnoreCase("sql"))
+       {
+            for(int i=0;i<languages.length;i++)
+           {
+                ImageView lan=languages[i];
+                lan.animate().alpha(0).setDuration(2000);
+                }
+           sql.animate().alpha(1).setDuration(2000);
+            int rndm=random.nextInt(101);//0 too 100
+           Toast.makeText(this, "your love to sql is: "+rndm+"%", Toast.LENGTH_SHORT).show();
+       }
+       else
+       {
+           for(int i=0;i<languages.length;i++)
+           {
+               ImageView lan=languages[i];
+                lan.animate().alpha(0).setDuration(2000);
+           }
+           react.animate().alpha(1).setDuration(2000);
+           int rndm=random.nextInt(101);//0 too 100
+            Toast.makeText(this, "your love to react is: "+rndm+"%", Toast.LENGTH_SHORT).show();
+        }
+
+
 
     }
 }
