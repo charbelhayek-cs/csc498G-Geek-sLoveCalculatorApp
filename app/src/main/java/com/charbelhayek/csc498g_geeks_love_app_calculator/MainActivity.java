@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void generate(View view)
     {
         TextView name=(TextView) findViewById(R.id.name);
-        n=name.toString();// where i will store the name as a String
+        n=name.getText().toString();// where i will store the name as a String
         ImageView html=(ImageView)findViewById(R.id.html);
         ImageView css=(ImageView)findViewById(R.id.css);
         ImageView js=(ImageView)findViewById(R.id.js);
@@ -57,82 +57,67 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ImageView react=(ImageView)findViewById(R.id.react);
         ImageView[] languages= {html,css,java,js,sql,react};//array of imageViews languages
 
-
-        if(language.equalsIgnoreCase("html"))
-        {
-           for(int i=0;i<languages.length;i++)//this for loop is to make the opacity of any existing image to 0 before making a new one 1
-           {
-               ImageView lan=languages[i];
-                lan.animate().alpha(0).setDuration(2000);
+           if(n.length()==0){
+               Toast.makeText(this,"please enter your name to starte the game",Toast.LENGTH_LONG).show();
            }
-            html.animate().alpha(1).setDuration(2000);
-            int rndm=random.nextInt(101);//0 too 100
-            Toast.makeText(this, "your love to html is: "+rndm+"%", Toast.LENGTH_SHORT).show();
-        }
-        else if(language.equalsIgnoreCase("css"))
-        {
-            for(int i=0;i<languages.length;i++)
-            {
-                ImageView lan=languages[i];
-                lan.animate().alpha(0).setDuration(2000);
-            }
-            css.animate().alpha(1).setDuration(2000);
-            int rndm=random.nextInt(101);//0 too 100
-            Toast.makeText(this, "your love to css is: "+rndm+"%", Toast.LENGTH_SHORT).show();
-        }
-        else if(language.equalsIgnoreCase("javascript"))
-        {
-            for(int i=0;i<languages.length;i++)
-            {
-                ImageView lan=languages[i];
-                lan.animate().alpha(0).setDuration(2000);
-            }
-            js.animate().alpha(1).setDuration(2000);
-            int rndm=random.nextInt(101);//0 too 100
-            Toast.makeText(this, "your love to js is: "+rndm+"%", Toast.LENGTH_SHORT).show();
-       }
-        else if(language.equalsIgnoreCase("java"))
-        {
-            for(int i=0;i<languages.length;i++)
-           {
-               ImageView lan=languages[i];
-               lan.animate().alpha(0).setDuration(2000);
+          else {
+               if (language.equalsIgnoreCase("html")) {
+                   for (int i = 0; i < languages.length; i++)//this for loop is to make the opacity of any existing image to 0 before making a new one 1
+                   {
+                       ImageView lan = languages[i];
+                       lan.animate().alpha(0).setDuration(2000);
+                   }
+                   html.animate().alpha(1).setDuration(2000);
+                   int rndm = random.nextInt(101);//0 too 100
+                   Toast.makeText(this, "your love to html is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+               } else if (language.equalsIgnoreCase("css")) {
+                   for (int i = 0; i < languages.length; i++) {
+                       ImageView lan = languages[i];
+                       lan.animate().alpha(0).setDuration(2000);
+                   }
+                   css.animate().alpha(1).setDuration(2000);
+                   int rndm = random.nextInt(101);//0 too 100
+                   Toast.makeText(this, "your love to css is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+               } else if (language.equalsIgnoreCase("javascript")) {
+                   for (int i = 0; i < languages.length; i++) {
+                       ImageView lan = languages[i];
+                       lan.animate().alpha(0).setDuration(2000);
+                   }
+                   js.animate().alpha(1).setDuration(2000);
+                   int rndm = random.nextInt(101);//0 too 100
+                   Toast.makeText(this, "your love to js is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+               } else if (language.equalsIgnoreCase("java")) {
+                   for (int i = 0; i < languages.length; i++) {
+                       ImageView lan = languages[i];
+                       lan.animate().alpha(0).setDuration(2000);
+                   }
+                   java.animate().alpha(1).setDuration(2000);
+                   int rndm = random.nextInt(101);//0 too 100
+                   Toast.makeText(this, "your love to java is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+               } else if (language.equalsIgnoreCase("sql")) {
+                   for (int i = 0; i < languages.length; i++) {
+                       ImageView lan = languages[i];
+                       lan.animate().alpha(0).setDuration(2000);
+                   }
+                   sql.animate().alpha(1).setDuration(2000);
+                   int rndm = random.nextInt(101);//0 too 100
+                   Toast.makeText(this, "your love to sql is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+               } else {
+                   for (int i = 0; i < languages.length; i++) {
+                       ImageView lan = languages[i];
+                       lan.animate().alpha(0).setDuration(2000);
+                   }
+                   react.animate().alpha(1).setDuration(2000);
+                   int rndm = random.nextInt(101);//0 too 100
+                   Toast.makeText(this, "your love to react is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+               }
            }
-            java.animate().alpha(1).setDuration(2000);
-            int rndm=random.nextInt(101);//0 too 100
-            Toast.makeText(this, "your love to java is: "+rndm+"%", Toast.LENGTH_SHORT).show();
-        }
-        else if(language.equalsIgnoreCase("sql"))
-       {
-            for(int i=0;i<languages.length;i++)
-           {
-                ImageView lan=languages[i];
-                lan.animate().alpha(0).setDuration(2000);
-                }
-           sql.animate().alpha(1).setDuration(2000);
-            int rndm=random.nextInt(101);//0 too 100
-           Toast.makeText(this, "your love to sql is: "+rndm+"%", Toast.LENGTH_SHORT).show();
-       }
-       else
-       {
-           for(int i=0;i<languages.length;i++)
-           {
-               ImageView lan=languages[i];
-                lan.animate().alpha(0).setDuration(2000);
-           }
-           react.animate().alpha(1).setDuration(2000);
-           int rndm=random.nextInt(101);//0 too 100
-            Toast.makeText(this, "your love to react is: "+rndm+"%", Toast.LENGTH_SHORT).show();
-        }
 
 
 
     }
     public void table(View v){
-        openActivity2();
+
     }
-    public void openActivity2(){
-        Intent intent = new Intent(this,MainActivity2.class);
-        startActivity(intent);
-    }
+
 }
