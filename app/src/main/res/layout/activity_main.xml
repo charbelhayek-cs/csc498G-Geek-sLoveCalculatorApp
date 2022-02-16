@@ -14,6 +14,7 @@
         android:onClick="generate"
         android:text="generate"
         android:textColor="#B2EBF2"
+        app:cornerRadius="20px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.078"
@@ -135,11 +136,16 @@
         android:layout_height="46dp"
         android:onClick="table"
         android:text="table"
+        android:textColor="#B2EBF2"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        app:cornerRadius="20px"
         app:layout_constraintBottom_toTopOf="@+id/html"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.495" />
+        app:layout_constraintVertical_bias="0.537"
+        app:rippleColor="#D32E2E" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
