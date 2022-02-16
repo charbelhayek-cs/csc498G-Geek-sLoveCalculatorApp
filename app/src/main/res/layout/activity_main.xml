@@ -148,7 +148,8 @@
         android:id="@+id/table_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding=""
+
+        android:alpha="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,15 +164,18 @@
                 android:id="@+id/html_table"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0"
+                android:layout_margin="10px"
                 android:padding="10sp"
                 android:text="html"
-                android:textColor="@android:color/black" />
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/html2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10px"
                 android:padding="10sp" />
         </TableRow>
 
@@ -183,15 +187,19 @@
                 android:id="@+id/js_table"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0"
+
+                android:layout_margin="10px"
                 android:padding="10sp"
                 android:text="javascript"
-                android:textColor="@android:color/black" />
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/js2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10px"
                 android:padding="10sp" />
         </TableRow>
 
@@ -203,15 +211,19 @@
                 android:id="@+id/css_table"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0"
+
+                android:layout_margin="10px"
                 android:padding="10sp"
                 android:text="css"
-                android:textColor="@android:color/black" />
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/css2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10px"
                 android:padding="10sp" />
         </TableRow>
 
@@ -223,15 +235,19 @@
                 android:id="@+id/react_table"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0"
+
+                android:layout_margin="10px"
                 android:padding="10sp"
                 android:text="react"
-                android:textColor="@android:color/black" />
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/react2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10px"
                 android:padding="10sp" />
         </TableRow>
 
@@ -243,15 +259,19 @@
                 android:id="@+id/sql_table"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0"
+
+                android:layout_margin="10px"
                 android:padding="10sp"
                 android:text="sql"
-                android:textColor="@android:color/black" />
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/sql2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10px"
                 android:padding="10sp" />
         </TableRow>
 
@@ -263,15 +283,19 @@
                 android:id="@+id/java_table"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0"
+
+                android:layout_margin="10px"
                 android:padding="10sp"
                 android:text="java"
-                android:textColor="@android:color/black" />
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/java2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10px"
                 android:padding="10sp" />
         </TableRow>
     </TableLayout>
@@ -293,5 +317,18 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         app:layout_constraintVertical_bias="0.064"
         app:rippleColor="#D32E2E" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:onClick="reset"
+        android:text="reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/table_layout"
+        app:layout_constraintTop_toBottomOf="@+id/table"
+        app:layout_constraintVertical_bias="0.88" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String n;
     String language;
     Random random=new Random();
+    int rnd=0;
 
 
 
@@ -68,48 +71,66 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                        lan.animate().alpha(0).setDuration(2000);
                    }
                    html.animate().alpha(1).setDuration(2000);
-                   int rndm = random.nextInt(101);//0 too 100
-                   Toast.makeText(this, "your love to html is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+                    rnd = random.nextInt(101);//0 too 100
+                   TextView html2=(TextView)findViewById(R.id.html2);
+                   String rndm=Integer.toString(rnd);
+                   html2.setText(rndm+"%");
+                   Toast.makeText(this, "your love to html is: " + rnd + "%", Toast.LENGTH_SHORT).show();
                } else if (language.equalsIgnoreCase("css")) {
                    for (int i = 0; i < languages.length; i++) {
                        ImageView lan = languages[i];
                        lan.animate().alpha(0).setDuration(2000);
                    }
                    css.animate().alpha(1).setDuration(2000);
-                   int rndm = random.nextInt(101);//0 too 100
-                   Toast.makeText(this, "your love to css is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+                    rnd = random.nextInt(101);//0 too 100
+                   TextView css2=(TextView)findViewById(R.id.css2);
+                   String rndm=Integer.toString(rnd);
+                   css2.setText(rndm+"%");
+                   Toast.makeText(this, "your love to css is: " + rnd + "%", Toast.LENGTH_SHORT).show();
                } else if (language.equalsIgnoreCase("javascript")) {
                    for (int i = 0; i < languages.length; i++) {
                        ImageView lan = languages[i];
                        lan.animate().alpha(0).setDuration(2000);
                    }
                    js.animate().alpha(1).setDuration(2000);
-                   int rndm = random.nextInt(101);//0 too 100
-                   Toast.makeText(this, "your love to js is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+                    rnd = random.nextInt(101);//0 too 100
+                   TextView js2=(TextView)findViewById(R.id.js2);
+                   String rndm=Integer.toString(rnd);
+                   js2.setText(rndm+"%");
+                   Toast.makeText(this, "your love to js is: " + rnd+ "%", Toast.LENGTH_SHORT).show();
                } else if (language.equalsIgnoreCase("java")) {
                    for (int i = 0; i < languages.length; i++) {
                        ImageView lan = languages[i];
                        lan.animate().alpha(0).setDuration(2000);
                    }
                    java.animate().alpha(1).setDuration(2000);
-                   int rndm = random.nextInt(101);//0 too 100
-                   Toast.makeText(this, "your love to java is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+                    rnd = random.nextInt(101);//0 too 100
+                   TextView java2=(TextView)findViewById(R.id.java2);
+                   String rndm=Integer.toString(rnd);
+                   java2.setText(rndm+"%");
+                   Toast.makeText(this, "your love to java is: " + rnd + "%", Toast.LENGTH_SHORT).show();
                } else if (language.equalsIgnoreCase("sql")) {
                    for (int i = 0; i < languages.length; i++) {
                        ImageView lan = languages[i];
                        lan.animate().alpha(0).setDuration(2000);
                    }
                    sql.animate().alpha(1).setDuration(2000);
-                   int rndm = random.nextInt(101);//0 too 100
-                   Toast.makeText(this, "your love to sql is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+                    rnd= random.nextInt(101);//0 too 100
+                   TextView sql2=(TextView)findViewById(R.id.sql2);
+                   String rndm=Integer.toString(rnd);
+                   sql2.setText(rndm+"%");
+                   Toast.makeText(this, "your love to sql is: " + rnd+ "%", Toast.LENGTH_SHORT).show();
                } else {
                    for (int i = 0; i < languages.length; i++) {
                        ImageView lan = languages[i];
                        lan.animate().alpha(0).setDuration(2000);
                    }
                    react.animate().alpha(1).setDuration(2000);
-                   int rndm = random.nextInt(101);//0 too 100
-                   Toast.makeText(this, "your love to react is: " + rndm + "%", Toast.LENGTH_SHORT).show();
+                    rnd = random.nextInt(101);//0 too 100
+                   TextView react2=(TextView)findViewById(R.id.react2);
+                   String rndm=Integer.toString(rnd);
+                   react2.setText(rndm+"%");
+                   Toast.makeText(this, "your love to react is: " + rnd + "%", Toast.LENGTH_SHORT).show();
                }
            }
 
@@ -117,7 +138,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
     public void table(View v){
+        Button reset=(Button)findViewById(R.id.reset);
+        reset.animate().alpha(1).setDuration(2000);
+        TableLayout tb=(TableLayout)findViewById(R.id.table_layout);
+        tb.animate().alpha(1).setDuration(2000);
 
+
+    }
+    public void reset(View v){
+        Button reset=(Button)findViewById(R.id.reset);
+        reset.animate().alpha(0).setDuration(1000);
+        TableLayout tb=(TableLayout)findViewById(R.id.table_layout);
+        tb.animate().alpha(0).setDuration(1000);
+        TextView html2=(TextView)findViewById(R.id.html2);
+        html2.setText("");
+        TextView css2=(TextView)findViewById(R.id.css2);
+        css2.setText("");
+        TextView js2=(TextView)findViewById(R.id.js2);
+        js2.setText("");
+        TextView java2=(TextView)findViewById(R.id.java2);
+        java2.setText("");
+        TextView sql2=(TextView)findViewById(R.id.sql2);
+        sql2.setText("");
+        TextView react2=(TextView)findViewById(R.id.react2);
+        react2.setText("");
     }
 
 }
